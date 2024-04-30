@@ -1,31 +1,31 @@
-import { useEffect, useState } from "react";
-import "./App.css";
-import { Button } from "react-bootstrap";
-import Navigation from "./components/Navigation";
-import { references, ReferenceType } from "./assets/references";
+import { useEffect, useState } from 'react'
+import './App.css'
+import { Button } from 'react-bootstrap'
+import Navigation from './components/Navigation'
+import { references, ReferenceType } from './assets/references'
 
 interface Forecast {
-  date: string;
-  temperatureC: number;
-  temperatureF: number;
-  summary: string;
+  date: string
+  temperatureC: number
+  temperatureF: number
+  summary: string
 }
 
 function App() {
-  const [forecasts, setForecasts] = useState<Forecast[]>();
+  const [forecasts, setForecasts] = useState<Forecast[]>()
 
   useEffect(() => {
-    populateWeatherData();
-  }, []);
+    populateWeatherData()
+  }, [])
 
   const contents =
     forecasts === undefined ? (
       <p>
         <em>
-          Loading... Please refresh once the ASP.NET backend has started. See{" "}
+          Loading... Please refresh once the ASP.NET backend has started. See{' '}
           <a href="https://aka.ms/jspsintegrationreact">
             https://aka.ms/jspsintegrationreact
-          </a>{" "}
+          </a>{' '}
           for more details.
         </em>
       </p>
@@ -50,7 +50,7 @@ function App() {
           ))}
         </tbody>
       </table>
-    );
+    )
 
   return (
     <div>
@@ -68,13 +68,13 @@ function App() {
         {contents}
       </div>
     </div>
-  );
+  )
 
   async function populateWeatherData() {
-    const response = await fetch("weatherforecast");
-    const data = await response.json();
-    setForecasts(data);
+    const response = await fetch('weatherforecast')
+    const data = await response.json()
+    setForecasts(data)
   }
 }
 
-export default App;
+export default App
