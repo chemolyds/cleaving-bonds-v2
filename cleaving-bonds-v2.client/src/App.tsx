@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css';
+import { Button } from 'react-bootstrap';
 
 interface Forecast {
     date: string;
@@ -42,6 +43,7 @@ function App() {
         <div>
             <h1 id="tableLabel">Weather forecast</h1>
             <p>This component demonstrates fetching data from the server.</p>
+            <Button variant="outline-danger">tests bootstrap</Button>
             {contents}
         </div>
     );
