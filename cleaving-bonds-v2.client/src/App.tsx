@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import { Button } from "react-bootstrap";
 import Navigation from "./components/Navigation";
+import { references, ReferenceType } from "./assets/references";
 
 interface Forecast {
   date: string;
@@ -55,6 +56,12 @@ function App() {
     <div>
       <Navigation />
       <div id="contents">
+        <h1>Welcome to WCC!</h1>
+        <p>Your reference materials:</p>
+        {references.map((ref: ReferenceType) => (
+          <Button href={ref.href}>{ref.title}</Button>
+        ))}
+
         <h1 id="tableLabel">Weather forecast</h1>
         <p>This component demonstrates fetching data from the server.</p>
         <Button variant="outline-danger">tests bootstrap</Button>
