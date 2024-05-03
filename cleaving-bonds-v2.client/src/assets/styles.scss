@@ -9,6 +9,10 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --cods-gold: #ffd700;
+  --cods-silver: #c0c0c0;
+  --cods-bronze: #cd7f32;
 }
 
 #contents {
@@ -19,5 +23,25 @@
 }
 
 .progress {
-  --#{$prefix}progress-height: 0.5rem;
+  --#{$prefix}progress-height: 0.25rem;
+}
+
+.progress-bronze {
+  --#{$prefix}progress-bar-bg: var(--cods-bronze);
+}
+.progress-silver {
+  --#{$prefix}progress-bar-bg: var(--cods-silver);
+}
+.progress-gold {
+  --#{$prefix}progress-bar-bg: var(--cods-gold);
+}
+
+.card-1st {
+  --#{$prefix}card-cap-bg: rgba(255, 215, 0, 0.5);
+}
+.card-2nd {
+  --#{$prefix}card-cap-bg: rgba(192, 192, 192, 0.5);
+}
+.card-3rd {
+  --#{$prefix}card-cap-bg: rgba(205, 127, 50, 0.5);
 }
