@@ -21,7 +21,7 @@ namespace cleaving_bonds_v2.Server.Controllers
             return new List<LeaderboardItem>();
         }
 
-        [HttpGet("/{tier}")]
+        [HttpGet("{tier}")]
         public async Task<ActionResult<IEnumerable<LeaderboardItem>>> GetTieredLeaderboard(Tier tier)
         {
             var rand = new Random();
