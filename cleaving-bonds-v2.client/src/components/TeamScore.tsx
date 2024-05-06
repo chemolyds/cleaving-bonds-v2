@@ -43,14 +43,14 @@ export default function TeamScore({
         <h4>{totalScore.toFixed(1)}</h4>
       </div>
       <ProgressBar>
-        <ProgressBar now={bronzeScore} variant="success" max={112} />
-        <ProgressBar now={silverScore} variant="warning" max={112} />
-        <ProgressBar now={goldScore} variant="danger" max={112} />
+              <ProgressBar now={bronzeScore} className="progress-bronze" max={112} />
+              <ProgressBar now={silverScore} className="progress-silver" max={112} />
+              <ProgressBar now={goldScore} className="progress-gold" max={112} />
       </ProgressBar>
     </div>
   )
 
-  return cardStyle
+  return (placement <= 3) ? cardStyle : divStyle
 }
 
 const rankName = (rank: number) => {
