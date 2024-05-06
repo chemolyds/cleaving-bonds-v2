@@ -3,9 +3,9 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import App from './App'
-import './assets/styles.scss'
-import Home from './pages/Home'
-import Leaderboard from './pages/Leaderboard'
+import '@/assets/styles.scss'
+import Home from '@/pages/Home'
+import Leaderboard from '@/pages/Leaderboard'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

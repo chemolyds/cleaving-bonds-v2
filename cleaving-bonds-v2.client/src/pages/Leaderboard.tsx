@@ -1,7 +1,7 @@
 import { Stack } from 'react-bootstrap'
 import useSWR from 'swr'
-import TeamScore from '../components/TeamScore'
-import { fetcher } from '../components/fetcher'
+import TeamScore from '@/components/TeamScore'
+import { fetcher } from '@/components/fetcher'
 
 export default function Leaderboard() {
   const { data: bronzeTeams } = useSWR('/api/Leaderboard/bronze', fetcher)

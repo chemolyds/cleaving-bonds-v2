@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Button } from 'react-bootstrap'
-import { ReferenceType, references } from '../assets/references'
+import { ReferenceType, references } from '@/assets/references'
 
 interface Forecast {
   date: string
