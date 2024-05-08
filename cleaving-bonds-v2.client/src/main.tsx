@@ -6,6 +6,7 @@ import App from './App'
 import '@/assets/styles.scss'
 import Home from '@/pages/Home'
 import Leaderboard from '@/pages/Leaderboard'
+import { AdminDashboard } from './pages/admin/Dashboard'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -14,6 +15,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />
           <Route path="leaderboard" element={<Leaderboard />} />
+          <Route path="admin">
+            <Route path="dashboard" element={<AdminDashboard />} />
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>

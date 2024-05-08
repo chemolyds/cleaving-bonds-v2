@@ -15,6 +15,9 @@ export default function Navigation() {
             <Nav.Link to="/leaderboard" as={Link}>
               Leaderboard
             </Nav.Link>
+            <Nav.Link to="/admin/dashboard" as={Link}>
+              Admin Dashboard
+            </Nav.Link>
             <Nav.Link>Login</Nav.Link>
           </Nav>
         </Navbar.Collapse>

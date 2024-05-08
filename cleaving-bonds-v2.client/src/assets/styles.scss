@@ -16,7 +16,7 @@
 }
 
 #contents {
-  max-width: 1280px;
+  //max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -44,4 +44,8 @@
 }
 .card-3rd {
   --#{$prefix}card-cap-bg: rgba(205, 127, 50, 0.5);
+}
+
+td {
+  border-bottom: 0px;
 }
