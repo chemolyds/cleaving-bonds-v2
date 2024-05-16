@@ -35,7 +35,8 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
-app.MapIdentityApi<ApplicationUser>();
+app.MapGroup("/api")
+    .MapIdentityApi<ApplicationUser>();
 
 app.MapFallbackToFile("/index.html");
 
