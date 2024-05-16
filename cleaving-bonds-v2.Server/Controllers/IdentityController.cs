@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace cleaving_bonds_v2.Server.Controllers
 {
-    //[Route("api/[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class IdentityController : ControllerBase
     {
@@ -17,7 +17,7 @@ namespace cleaving_bonds_v2.Server.Controllers
             _signInManager = signInManager;
         }
 
-        [HttpPost("/logout")]
+        [HttpPost("logout")]
         [Authorize]
         public async Task<IResult> Logout(object empty)
         {
@@ -27,6 +27,13 @@ namespace cleaving_bonds_v2.Server.Controllers
                 return Results.Ok();
             }
             return Results.Unauthorized();
+        }
+
+        [HttpGet("isLoggedIn")]
+        [Authorize]
+        public IResult GetIsLoggedIn()
+        {
+            return Results.Ok(true);
         }
     }
 }
