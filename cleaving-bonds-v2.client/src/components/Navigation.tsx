@@ -1,7 +1,17 @@
 import { Container, Nav, Navbar } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import useSWR from 'swr'
+import { fetcher } from './fetcher'
+
+const paths = [
+  { to: '/', name: 'Home' },
+  { to: '/leaderboard', name: 'Leaderboard' },
+  { to: '/admin/dashboard', name: 'Admin Dashboard' },
+]
 
 export default function Navigation() {
+  const { data: isLoggedIn } = useSWR('/api/Identity/isLoggedIn', fetcher)
+
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
@@ -9,16 +19,20 @@ export default function Navigation() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link to="/" as={Link}>
-              Home
-            </Nav.Link>
-            <Nav.Link to="/leaderboard" as={Link}>
-              Leaderboard
-            </Nav.Link>
-            <Nav.Link to="/admin/dashboard" as={Link}>
-              Admin Dashboard
-            </Nav.Link>
-            <Nav.Link>Login</Nav.Link>
+            {paths.map((path) => (
+              <Nav.Link to={path.to} as={Link} key={path.to}>
+                {path.name}
+              </Nav.Link>
+            ))}
+            {isLoggedIn ? (
+              <Nav.Link to="/logout" as={Link} key="/logout">
+                Logout
+              </Nav.Link>
+            ) : (
+              <Nav.Link to="/login" as={Link} key="/login">
+                Login
+              </Nav.Link>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>
