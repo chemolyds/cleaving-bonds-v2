@@ -1,15 +1,15 @@
+import '@/assets/styles.scss'
+import Home from '@/pages/Home'
+import Leaderboard from '@/pages/Leaderboard'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import App from './App'
-import '@/assets/styles.scss'
-import Home from '@/pages/Home'
-import Leaderboard from '@/pages/Leaderboard'
-import { AdminDashboard } from './pages/admin/Dashboard'
 import Login from './pages/Login'
 import Logout from './pages/Logout'
-import { QuestionSetsList } from './pages/QuestionSetsList'
+import QuestionSetsList from './pages/QuestionSetsList'
+import AdminDashboard from './pages/admin/Dashboard'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

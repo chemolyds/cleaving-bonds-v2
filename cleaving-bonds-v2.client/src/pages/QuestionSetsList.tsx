@@ -3,7 +3,7 @@ import { QuestionStatusByTier } from '@/types/Questions'
 import { Button } from 'react-bootstrap'
 import useSWR from 'swr'
 
-export function QuestionSetsList() {
+export default function QuestionSetsList() {
   const { data: questionSets, isLoading } = useSWR('/api/Question', fetcher)
 
   const Sets = () => (
