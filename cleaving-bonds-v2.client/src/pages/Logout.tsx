@@ -6,7 +6,7 @@ export default function Logout() {
   const navigate = useNavigate()
 
   const logoutUser = async () => {
-    const response = await fetch('/api/Identity/logout', {
+    await fetch('/api/Identity/logout', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -14,7 +14,6 @@ export default function Logout() {
       body: JSON.stringify({}),
     })
 
-    alert('bye...')
     mutate('/api/Identity/isLoggedIn')
     navigate('/')
   }
@@ -30,7 +29,7 @@ export default function Logout() {
           </Button>
         </div>
         <div className="col d-grid">
-          <Button variant="primary" onClick={() => navigate('/')}>
+          <Button variant="primary" href="/">
             No
           </Button>
         </div>
