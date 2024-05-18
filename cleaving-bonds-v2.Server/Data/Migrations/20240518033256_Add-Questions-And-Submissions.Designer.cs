@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using cleaving_bonds_v2.Server.Data;
 
@@ -11,9 +12,11 @@ using cleaving_bonds_v2.Server.Data;
 namespace cleaving_bonds_v2.Server.Data.Migrations
 {
     [DbContext(typeof(WccContext))]
-    partial class WccContextModelSnapshot : ModelSnapshot
+    [Migration("20240518033256_Add-Questions-And-Submissions")]
+    partial class AddQuestionsAndSubmissions
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
