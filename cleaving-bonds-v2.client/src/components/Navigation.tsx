@@ -7,6 +7,7 @@ const paths = [
   { to: '/', name: 'Home' },
   { to: '/leaderboard', name: 'Leaderboard' },
   { to: '/admin/dashboard', name: 'Admin Dashboard' },
+  { to: '/sets', name: 'Sets' },
 ]
 
 export default function Navigation() {
