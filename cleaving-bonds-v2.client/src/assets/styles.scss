@@ -54,3 +54,8 @@
 td {
   border-bottom: 0px;
 }
+
+.pdf-container {
+  @include make-container();
+  width: 613px;
+}
