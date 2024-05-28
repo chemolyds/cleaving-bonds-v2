@@ -1,6 +1,6 @@
 import { CheckLg } from 'react-bootstrap-icons'
 
-export function AdminDashboard() {
+export default function AdminDashboard() {
   return (
     <div>
       <h1>Scores</h1>
