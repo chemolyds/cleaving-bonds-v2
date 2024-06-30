@@ -12,6 +12,7 @@ const paths = [
 
 export default function Navigation() {
   const { data: isLoggedIn } = useSWR('/api/Identity/isLoggedIn', fetcher)
+  const { data: isCatalyzed } = useSWR('/api/competitor/isCatalyzed', fetcher)
 
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
@@ -34,6 +35,9 @@ export default function Navigation() {
                 Login
               </Nav.Link>
             )}
+            <Navbar.Text>
+              {isCatalyzed ? 'Catalyzed!' : 'Not Catalyzed...'}
+            </Navbar.Text>
           </Nav>
         </Navbar.Collapse>
       </Container>

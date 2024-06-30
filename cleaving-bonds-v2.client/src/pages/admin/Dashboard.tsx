@@ -1,10 +1,18 @@
 import { CheckLg } from 'react-bootstrap-icons'
+import { mutate } from 'swr'
 
 export default function AdminDashboard() {
+  function toggleCatalyze() {
+    fetch('/api/Admin/toggleCatalyze')
+    mutate('/api/Competitor/isCatalyzed')
+  }
+
   return (
     <div>
       <h1>Scores</h1>
-      <button className="btn btn-danger w-100 mb-2">Toggle Catalyze</button>
+      <button className="btn btn-danger w-100 mb-2" onClick={toggleCatalyze}>
+        Toggle Catalyze
+      </button>
       <table className="table">
         <thead>
           <tr>
