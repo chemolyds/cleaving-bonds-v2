@@ -16,7 +16,7 @@
     "react-bootstrap-icons": "^1.11.4",
     "react-dom": "^18.2.0",
     "react-google-forms-hooks": "^1.2.4",
-    "react-pdf": "^8.0.2",
+    "react-pdf": "^9.0.0",
     "react-router-dom": "^6.23.0",
     "swr": "^2.2.5"
   },
