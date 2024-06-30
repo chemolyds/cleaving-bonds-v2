@@ -1,3 +1,4 @@
+import Form from '@/components/Form'
 import Pdf from '@/components/Pdf'
 import { Tier } from '@/types/Tier'
 import { Topic } from '@/types/Topic'
@@ -17,7 +18,7 @@ export default function Question() {
           <Pdf src={`/pdf/Bronze/Analytical.pdf`} />
         </Col>
         <Col xs={16} lg xl xxl>
-          <h2>Form</h2>
+          <Form questionId={id} form={f} />
         </Col>
       </Row>
     </div>

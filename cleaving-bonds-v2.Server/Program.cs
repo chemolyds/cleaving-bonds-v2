@@ -2,6 +2,7 @@ using cleaving_bonds_v2.Server.Data;
 using cleaving_bonds_v2.Server.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using System.Runtime.Caching;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -39,5 +40,7 @@ app.MapGroup("/api")
     .MapIdentityApi<ApplicationUser>();
 
 app.MapFallbackToFile("/index.html");
+
+MemoryCache.Default["IsCatalyzed"] = false;
 
 app.Run();
